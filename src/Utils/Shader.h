@@ -2,9 +2,9 @@
 #define SHADER_H
 #include <iostream>
 #include <string>
-#include "../lib/glad/glad.h"
-#include "../lib/glm/glm.hpp"
-#include "../lib/glm/gtc/type_ptr.hpp"
+#include "../../lib/glad/glad.h"
+#include "../../lib/glm/glm.hpp"
+#include "../../lib/glm/gtc/type_ptr.hpp"
 
 //  General Shader object. Compiles from file
 //  Generates compile/link-time errors messages and log 
