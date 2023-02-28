@@ -1,9 +1,10 @@
 #ifndef SHADER_H
 #define SHADER_H
-
+#include <iostream>
 #include <string>
-#include "../lib/glad/glad.h"
-#include "../lib/glm/glm.hpp"
+#include "../../lib/glad/glad.h"
+#include "../../lib/glm/glm.hpp"
+#include "../../lib/glm/gtc/type_ptr.hpp"
 
 //  General Shader object. Compiles from file
 //  Generates compile/link-time errors messages and log 
@@ -36,18 +37,18 @@ public:
     void SetInteger(const char *name, GLint v0, GLint v1, GLint v2, bool useShader = false);
     void SetInteger(const char *name, GLint v0, GLint v1, GLint v2, GLint v3, bool useShader = false);
     // info vector setting functions, with overloading
-    void SetVector1f(const char *name, glm::vec1 &value, bool useShader = false);
+    void SetVector1f(const char *name, const glm::vec1 &vector, bool useShader = false);
     void SetVector1f(const char *name, GLfloat x, bool useShader = false);
-    void SetVector2f(const char *name, glm::vec2 &value, bool useShader = false);
+    void SetVector2f(const char *name, const glm::vec2 &vector, bool useShader = false);
     void SetVector2f(const char *name, GLfloat x, GLfloat y, bool useShader = false);
-    void SetVector3f(const char *name, glm::vec3 &value, bool useShader = false);
+    void SetVector3f(const char *name, const glm::vec3 &vector, bool useShader = false);
     void SetVector3f(const char *name, GLfloat x, GLfloat y, GLfloat z, bool useShader = false);
-    void SetVector4f(const char *name, glm::vec4 &value, bool useShader = false);
+    void SetVector4f(const char *name, const glm::vec4 &vector, bool useShader = false);
     void SetVector4f(const char *name, GLfloat x, GLfloat y, GLfloat z, GLfloat w, bool useShader = false);
     // info matrix setting functions, no overloading
-    void SetMatrix2f(const char *name, glm::mat2 &value, bool useShader = false);
-    void SetMatrix3f(const char *name, glm::mat3 &value, bool useShader = false);
-    void SetMatrix4f(const char *name, glm::mat4 &value, bool useShader = false);
+    void SetMatrix2f(const char *name, const glm::mat2 &matrix, bool useShader = false);
+    void SetMatrix3f(const char *name, const glm::mat3 &matrix, bool useShader = false);
+    void SetMatrix4f(const char *name, const glm::mat4 &matrix, bool useShader = false);
     // group ========================END============================
 
 private:
