@@ -1,7 +1,5 @@
 #include "Texture_resource_manager.h"
 
-#include "stb_image.h"
-
 //info Instantiate static variables
 std::map<std::string, Texture>    TextureResourceManager::Textures;
 
