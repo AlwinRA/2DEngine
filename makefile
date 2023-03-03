@@ -2,7 +2,7 @@ CXX		:= g++
 CXX_FLAGS       := -g -std=c++17 #-Wextra -Wall
 
 SRC		:= src
-INCLUDE         := ./include
+INCLUDE         := ./src/Utils
 LIB		:= ./lib
 
 LIBRARIES	:= -lglad -lglfw3dll -lgdi32 -lglew32 -lopengl32

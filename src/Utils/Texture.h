@@ -1,6 +1,7 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#include <glad/glad.h>
 #include <glm/glm.hpp>
 
 // Texture2D is able to store and configure a texture in OpenGL.
@@ -28,7 +29,6 @@ public:
     unsigned int Filter_Max;
 
     Texture();
-    ~Texture();
     //info Generate texture from image data
     void Generate(unsigned int width, unsigned int height, unsigned char *data);
     //info binds the texture as the current active GL_TEXTURE_2D texture object

@@ -6,10 +6,6 @@ Texture::Texture()
     glGenTextures(1, &this->ID);
 }
 
-Texture::~Texture()
-{
-}
-
 void Texture::Generate(unsigned int width, unsigned int height, unsigned char *data)
 {
     this->Width = width;
