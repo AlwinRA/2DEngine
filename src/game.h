@@ -3,8 +3,7 @@
 
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
-#include "Utils/Shader.h"
-#include "Utils/Texture.h"
+
 //info Represents the current state of the game
 enum GameState {
     GAME_ACTIVE,

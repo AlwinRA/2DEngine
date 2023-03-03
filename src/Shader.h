@@ -15,7 +15,7 @@ public:
     // info State_variable
     unsigned int ID;
     // info Constructor 
-    Shader();
+    Shader() {  };
     // info Sets the current shader as active
     Shader &Use();
 
