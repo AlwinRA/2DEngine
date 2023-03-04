@@ -90,8 +90,15 @@ Texture ResourceManager::loadTextureFromFile(const char *file, bool alpha)
     int width, height, nrChannels;
     unsigned char* data = stbi_load(file, &width, &height, &nrChannels, 0);
     // now generate texture
-    texture.Generate(width, height, data);
     // and finally free image data
+    if (data)
+    {
+        texture.Generate(width, height, data);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
     stbi_image_free(data);
     return texture;
 }

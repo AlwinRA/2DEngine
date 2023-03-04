@@ -10,15 +10,15 @@ void Texture::Generate(unsigned int width, unsigned int height, unsigned char *d
 {
     this->Width = width;
     this->Height = height;
-    //info create texture
+    // create Texture
     glBindTexture(GL_TEXTURE_2D, this->ID);
-    glTexImage2D(GL_TEXTURE_2D, 0, this->Texture_Format, width, height, 0, this->Image_Format, GL_UNSIGNED_INT, data);
-    //info set Texture wrap and filter modes
+    glTexImage2D(GL_TEXTURE_2D, 0, this->Texture_Format, width, height, 0, this->Image_Format, GL_UNSIGNED_BYTE, data);
+    // set Texture wrap and filter modes
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, this->Wrap_S);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, this->Wrap_T);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, this->Filter_Min);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, this->Filter_Max);
-    //info unbind texture
+    // unbind texture
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
