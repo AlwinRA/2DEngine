@@ -1,11 +1,3 @@
-/*******************************************************************
-** This code is part of Breakout.
-**
-** Breakout is free software: you can redistribute it and/or modify
-** it under the terms of the CC BY 4.0 license as published by
-** Creative Commons, either version 4 of the License, or (at your
-** option) any later version.
-******************************************************************/
 #include "game.h"
 #include "resource_manager.h"
 #include "sprite_renderer.h"
@@ -53,5 +45,5 @@ void Game::ProcessInput(float dt)
 
 void Game::Render()
 {
-    Renderer->DrawSprite(ResourceManager::GetTexture("face"), glm::vec2(200.0f, 200.0f), glm::vec2(400.0f, 400.0f), 45.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    Renderer->DrawSprite(ResourceManager::GetTexture("face"), glm::vec2(200.0f, 200.0f), glm::vec2(200.0f, 200.0f), 45.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 }

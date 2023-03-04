@@ -3,7 +3,7 @@
 
 #include <glad/glad.h>
 #include "Shader.h"
-#include "Texture.h"
+#include "Texture/Texture.h"
 
 #include <map>
 #include <string>
