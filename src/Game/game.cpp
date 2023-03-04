@@ -1,7 +1,4 @@
 #include "game.h"
-#include "resource_manager.h"
-#include "sprite_renderer.h"
-
 
 // Game-related State data
 SpriteRenderer  *Renderer;

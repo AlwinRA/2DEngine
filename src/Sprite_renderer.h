@@ -6,7 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "Texture/Texture.h"
-#include "Shader.h"
+#include "Shader/Shader.h"
 
 
 class SpriteRenderer

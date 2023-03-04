@@ -4,6 +4,9 @@
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
 
+#include "../ResourceManager/resource_manager.h"
+#include "../sprite_renderer.h"
+
 //info Represents the current state of the game
 enum GameState {
     GAME_ACTIVE,

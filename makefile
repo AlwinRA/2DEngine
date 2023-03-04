@@ -5,7 +5,7 @@ SRC		:= src
 LIB		:= ./lib
 
 LIBRARIES	:= -lglad -lglfw3dll -lgdi32 -lglew32 -lopengl32 -lglu32
-EXECUTABLE	:= build/main
+EXECUTABLE	:= bin/main
 
 all:./$(EXECUTABLE)
 

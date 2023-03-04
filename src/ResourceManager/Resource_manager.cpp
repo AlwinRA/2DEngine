@@ -1,10 +1,7 @@
 #include "Resource_manager.h"
 
-#include <iostream>
-#include <sstream>
-#include <fstream>
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include <stb_image.h>
 
 // Instantiate static variables
 std::map<std::string, Texture>    ResourceManager::Textures;
@@ -67,7 +64,7 @@ Shader ResourceManager::loadShaderFromFile(const char *vShaderFile, const char *
     }
     catch (std::exception e)
     {
-        std::cout << "ERROR::SHADER: Failed to read shader files" << std::endl;
+        std::cout << "ERROR::SHADER: Failed to read shader files.\n" << std::endl;
     }
     const char *vShaderCode = vertexCode.c_str();
     const char *fShaderCode = fragmentCode.c_str();
@@ -97,7 +94,7 @@ Texture ResourceManager::loadTextureFromFile(const char *file, bool alpha)
     }
     else
     {
-        std::cout << "Failed to load texture" << std::endl;
+        std::cout << "Failed::Texture.Load : " << file << "\n"  << std::endl;
     }
     stbi_image_free(data);
     return texture;
