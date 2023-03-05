@@ -6,7 +6,7 @@
 
 #include "../ResourceManager/texture_resource_manager.h"
 #include "../ResourceManager/shader_resource_manager.h"
-#include "../sprite_renderer.h"
+#include "../SpriteRenderer/sprite_renderer.h"
 
 //info Represents the current state of the game
 enum GameState {

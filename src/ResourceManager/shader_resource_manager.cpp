@@ -42,7 +42,6 @@ Shader ShaderResourceManager::loadShaderFromFile(const char *vShaderFile, const 
         // convert stream into string
         vertexCode = vShaderStream.str();
         fragmentCode = fShaderStream.str();
-        // if geometry shader path is present, also load a geometry shader
     }
     catch (std::exception e)
     {

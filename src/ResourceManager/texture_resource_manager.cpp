@@ -37,7 +37,6 @@ Texture TextureResourceManager::loadTextureFromFile(const char *file, bool alpha
     int width, height, nrChannels;
     unsigned char* data = stbi_load(file, &width, &height, &nrChannels, 0);
     // now generate texture
-    // and finally free image data
     if (data)
     {
         texture.Generate(width, height, data);
@@ -46,6 +45,7 @@ Texture TextureResourceManager::loadTextureFromFile(const char *file, bool alpha
     {
         std::cout << "Failed::Texture.Load : " << file << "\n"  << std::endl;
     }
+    // and finally free image data
     stbi_image_free(data);
     return texture;
 }
