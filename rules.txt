@@ -1,0 +1,3 @@
+FileNaming
+->name should start with small letter
+->multi word name should be spilted with underscores

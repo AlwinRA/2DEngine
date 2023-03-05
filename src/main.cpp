@@ -1,17 +1,9 @@
-/*******************************************************************
-** This code is part of Breakout.
-**
-** Breakout is free software: you can redistribute it and/or modify
-** it under the terms of the CC BY 4.0 license as published by
-** Creative Commons, either version 4 of the License, or (at your
-** option) any later version.
-******************************************************************/
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
 
-#include "game.h"
-#include "resource_manager.h"
-
+#include "Game/game.h"
+#include "ResourceManager/texture_resource_manager.h"
+#include "ResourceManager/shader_resource_manager.h"
 #include <iostream>
 
 // GLFW function declarations
@@ -23,7 +15,7 @@ const unsigned int SCREEN_WIDTH = 800;
 // The height of the screen
 const unsigned int SCREEN_HEIGHT = 600;
 
-Game Breakout(SCREEN_WIDTH, SCREEN_HEIGHT);
+Game game(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 int main(int argc, char *argv[])
 {
@@ -36,7 +28,7 @@ int main(int argc, char *argv[])
 #endif
     glfwWindowHint(GLFW_RESIZABLE, false);
 
-    GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Breakout", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "game", nullptr, nullptr);
     glfwMakeContextCurrent(window);
 
     // glad: load all OpenGL function pointers
@@ -58,7 +50,7 @@ int main(int argc, char *argv[])
 
     // initialize game
     // ---------------
-    Breakout.Init();
+    game.Init();
 
     // deltaTime variables
     // -------------------
@@ -76,24 +68,25 @@ int main(int argc, char *argv[])
 
         // manage user input
         // -----------------
-        Breakout.ProcessInput(deltaTime);
+        game.ProcessInput(deltaTime);
 
         // update game state
         // -----------------
-        Breakout.Update(deltaTime);
+        game.Update(deltaTime);
 
         // render
         // ------
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        Breakout.Render();
+        game.Render();
 
         glfwSwapBuffers(window);
     }
 
     // delete all resources as loaded using the resource manager
     // ---------------------------------------------------------
-    ResourceManager::Clear();
+    TextureResourceManager::Clear();
+    ShaderResourceManager::Clear();
 
     glfwTerminate();
     return 0;
@@ -107,9 +100,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key >= 0 && key < 1024)
     {
         if (action == GLFW_PRESS)
-            Breakout.Keys[key] = true;
+            game.Keys[key] = true;
         else if (action == GLFW_RELEASE)
-            Breakout.Keys[key] = false;
+            game.Keys[key] = false;
     }
 }
 
