@@ -2,7 +2,6 @@
 #include "../ResourceManager/texture_resource_manager.h"
 // Game-related State data
 SpriteRenderer  *Renderer;
-
 Game::Game(unsigned int width, unsigned int height) 
     : State(GAME_ACTIVE), Keys(), Width(width), Height(height)
 { 
@@ -42,6 +41,5 @@ void Game::ProcessInput(float dt)
 
 void Game::Render()
 {
-    Renderer->DrawSprite( glm::vec2(200.0f, 200.0f), glm::vec2(200.0f, 200.0f), 0.0f, glm::vec3(1.0f, 0.0f, 0.0f));
-    Renderer->DrawSprite( glm::vec2(250.0f, 200.0f), glm::vec2(200.0f, 200.0f), 0.0f, glm::vec3(0.0f, 1.0f, 0.0f));
+    Renderer->DrawSprite(glm::vec2(10.0f, 10.0f), glm::vec2(40.0f, 40.0f), 0.0f, glm::vec3(1.0f,1.0f,1.0f));
 }

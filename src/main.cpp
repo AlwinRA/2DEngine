@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 
     // initialize game
     game.Init();
+    game.State = GAME_ACTIVE;
 
     // deltaTime variables
     float deltaTime = 0.0f;

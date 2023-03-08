@@ -14,7 +14,15 @@ Texture TextureResourceManager::LoadTexture(const char *file, bool alpha, std::s
 
 Texture TextureResourceManager::GetTexture(std::string name)
 {
-    return Textures[name];
+    if(Textures.count(name))
+    {
+        return Textures[name];
+    }
+    else
+    {
+        std::cout << "Failed::Texture::GetTexture : " << name << "\n"  << std::endl;
+        return Textures["DefaultTexture"];
+    }
 }
 
 void TextureResourceManager::Clear()
@@ -43,7 +51,7 @@ Texture TextureResourceManager::loadTextureFromFile(const char *file, bool alpha
     }
     else
     {
-        std::cout << "Failed::Texture.Load : " << file << "\n"  << std::endl;
+        std::cout << "Failed::Texture::LoadTexture : " << file << "\n"  << std::endl;
     }
     // and finally free image data
     stbi_image_free(data);
