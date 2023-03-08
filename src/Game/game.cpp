@@ -10,7 +10,6 @@ Game::Game(unsigned int width, unsigned int height)
 Game::~Game()
 {
     delete Renderer;
-    delete player;
 }
 
 void Game::Init()
@@ -27,6 +26,13 @@ void Game::Init()
     // load textures
     TextureResourceManager::LoadTexture("../Texture/Logo.png", true, "logo");
     Renderer->defaultTexture = TextureResourceManager::LoadTexture("../Texture/Logo.png", true, "logo");
+    TextureResourceManager::LoadTexture("../Texture/background.jpg", false, "background");
+    TextureResourceManager::LoadTexture("../Texture/block.png", false, "block");
+    TextureResourceManager::LoadTexture("../Texture/block_solid.png", false, "block_solid");
+    // load levels
+    GameLevel one; one.Load("../src/one.lvl", this->Width, this->Height / 2);
+    this->Levels.push_back(one);
+    this->Level = 0;
 }
 
 void Game::Update(float dt)
@@ -40,4 +46,12 @@ void Game::ProcessInput(float dt)
 
 void Game::Render()
 {
+    if(this->State == GAME_ACTIVE)
+    {
+        // draw background
+        Renderer->DrawSprite(TextureResourceManager::GetTexture("background"), 
+            glm::vec2(0.0f, 0.0f), glm::vec2(this->Width, this->Height), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+        // draw level
+        this->Levels[this->Level].Draw(*Renderer);
+    }
 }
