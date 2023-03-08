@@ -20,7 +20,7 @@ public:
     Texture   Sprite;	
     // constructor(s)
     Entity();
-    Entity(glm::vec2 pos, glm::vec2 size, Texture sprite, glm::vec3 color = glm::vec3(1.0f), glm::vec2 velocity = glm::vec2(0.0f, 0.0f));
+    Entity(Texture sprite, glm::vec2 pos, glm::vec2 size, float rotation, glm::vec3 color = glm::vec3(1.0f), glm::vec2 velocity = glm::vec2(0.0f, 0.0f));
     // draw sprite
     virtual void Draw(SpriteRenderer &renderer);
 };

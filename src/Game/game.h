@@ -3,10 +3,12 @@
 
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
+#include "vector"
 
 #include "../ResourceManager/texture_resource_manager.h"
 #include "../ResourceManager/shader_resource_manager.h"
 #include "../SpriteRenderer/sprite_renderer.h"
+#include "../Entity/entity.h"
 
 //info Represents the current state of the game
 enum GameState {
@@ -22,6 +24,8 @@ public:
     GameState               State;	
     bool                    Keys[1024];
     unsigned int            Width, Height;
+    std::vector<Entity> Entitys;
+    Entity *player;
     // constructor/destructor
     Game(unsigned int width, unsigned int height);
     ~Game();
