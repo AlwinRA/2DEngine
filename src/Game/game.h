@@ -9,6 +9,7 @@
 #include "../ResourceManager/shader_resource_manager.h"
 #include "../SpriteRenderer/sprite_renderer.h"
 #include "../Entity/entity.h"
+#include "../Entity/Ball/ball.h"
 #include "../Level/level.h"
 
 //info Represents the current state of the game
